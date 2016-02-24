@@ -1,0 +1,11 @@
+#! /bin/bash
+
+command="$1"; shift
+
+if [ $command = "search" ]; then
+  xbps-query -Rs "$@" 
+elif [ $command = "upgrade" ]; then
+  xbps-install -Sy 
+else
+  xbps-$command "$@"
+fi
