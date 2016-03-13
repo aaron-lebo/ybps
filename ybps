@@ -5,7 +5,7 @@ command="$1"; shift
 if [ $command = "search" ]; then
   xbps-query -Rs "$@" 
 elif [ $command = "upgrade" ]; then
-  xbps-install -Sy 
+  xbps-install -Syu 
 else
   xbps-$command "$@"
 fi
